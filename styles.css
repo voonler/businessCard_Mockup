@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Variables*/
+:root{
+    /*:root used to declare global CSS variables*/
+    --white: #fafafa;
+    --violet: #e2d8fd;
+    --platinum: #EADEDA;
+    --grey1: #e1e1e1;
+    --grey2: #6a6a6a;
+}
+
+html, 
+body,
+.main-container{
+    height: 100%;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem; /*1.6 times bigger than current font */
+    background: var(--violet);
+}
+
+/****************
+  MAIN CONTAINER
+ ***************/
+
+ .main-container{
+     display: flex; /*Displays an element as a block-level felx container*/
+     justify-content: space-around; /*Display the flex items with space before, between, and after the lines*/
+     align-items: center;
+ }
+
+ .scene{
+     width: 90%;
+     max-width: 35rem;
+     height: 20rem;
+     margin: 0 auto;
+     perspective: 600px; /*Gives the card some 3D effect*/
+ }
