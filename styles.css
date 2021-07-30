@@ -9,9 +9,10 @@
     /*:root used to declare global CSS variables*/
     --white: #fafafa;
     --violet: #e2d8fd;
-    --platinum: #EADEDA;
+    --platinum: #EADEDA; 
     --grey1: #e1e1e1;
     --grey2: #6a6a6a;
+    --jet: #2a2b2e;
 }
 
 html, 
@@ -21,13 +22,17 @@ body,
 
 }
 
+a {
+    text-decoration: none;
+  }
+
 html{
     font-size: 62.5%; 
 }
 
 body{
     font-size: 1.6rem; /*1.6 times bigger than current font */
-    background: var(--violet);
+    background: var(--platinum);
 }
 
 /****************
@@ -42,8 +47,108 @@ body{
 
  .scene{
      width: 90%;
-     max-width: 35rem;
-     height: 20rem;
+     max-width: 55rem;
+     height: 35rem;
      margin: 0 auto;
      perspective: 600px; /*Gives the card some 3D effect*/
  }
+
+ .card{
+     height: 100%;
+     width: 100%;
+     position: relative;
+     transition: all 1s ease;
+     transform-style: preserve-3d;
+     margin: 0 auto;
+     border-radius: 20px;
+     box-shadow: -15px 20px 20px rgba(22,4,74,0.15);
+     background: var(--jet);
+ }
+
+ .card:hover{
+     cursor: pointer;
+ }
+
+ .card_front,
+ .card_back{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+ }
+
+ .card_front{
+     padding: 0 2rem;
+ }
+
+ .business_logo{
+     width: 20rem;
+     height: 20rem;
+     margin-top: 1rem;
+     margin-left: 1rem;
+     position: relative;
+     top: -40px;
+     left:-70px;
+     padding: 10px;
+ }
+
+.name,
+.role,
+.title
+{
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--platinum);
+    font-weight: 400;
+    text-transform: uppercase;  
+    text-align:center;  
+}
+
+.vertical_line{
+    border-left: 6px solid white;
+    border-width: 2px;
+    height:100px;
+    position:relative;
+    top: -150px;
+    bottom: 40px;
+    left: 250px;
+}
+
+.name{
+    position: relative;
+    top: -6.5rem;
+    left: -9rem;
+    display: block;
+}
+
+.role{
+    position: relative;
+    top: -9rem;
+    left: 27rem;
+    display: inline;
+}
+
+/*Card Back*/
+.card_back{
+    padding-top: 4rem;
+    transform: rotateY(180deg);
+}
+
+.card.is-flipped{
+    transform: rotateY(180deg);
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 15px 15px;
+    margin-left: 25px;
+    display: inline-flex;
+    position: relative;
+    top: 35px;
+}
+
+
+
